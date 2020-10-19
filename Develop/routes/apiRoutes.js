@@ -13,7 +13,7 @@ module.exports = function(app) {
     // how to publish a note, needs both content and title to be savedd) 
     app.post("/api/notes", function(req, res) {
             var noteCont = req.body;
-            console.log(noteCont);
+            //console.log(noteCont);
             var notes = fs.readFileSync("./db/db.json");
             noteCont.id = uuidv4();
             console.log("The id of note is:", noteCont.id);
