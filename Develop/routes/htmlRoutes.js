@@ -3,6 +3,7 @@ var fs = require("fs");
 var db = [];
 var path = require("path");
 
+
 module.exports = function(app) {
 
     app.get("/notes", function(req, res) {

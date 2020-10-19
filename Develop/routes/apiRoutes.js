@@ -2,7 +2,7 @@ var app = require("express");
 var fs = require("fs");
 var db = [];
 var path = require("path");
-
+const { v4: uuidv4 } = require('uuid');
 
 module.exports = function(app) {
 
@@ -13,9 +13,10 @@ module.exports = function(app) {
     // how to publish a note, needs both content and title to be savedd) 
     app.post("/api/notes", function(req, res) {
             var noteCont = req.body;
+            console.log(noteCont);
             var notes = fs.readFileSync("./db/db.json");
-            noteCont.id = String(notes.length);
-            console.log("The length of notes is:", notes.length);
+            noteCont.id = uuidv4();
+            console.log("The id of note is:", noteCont.id);
             notes = JSON.parse(notes);
             notes.push(noteCont);
             fs.writeFileSync("./db/db.json", JSON.stringify(notes));
@@ -27,8 +28,8 @@ module.exports = function(app) {
         console.log(noteID);
         notes = fs.readFileSync("./db/db.json");
         notes = JSON.parse(notes);
-        notes = notes.filter(function(farley) {
-                if (noteID === farley.id) {
+        notes = notes.filter(function(selectedNote) {
+                if (noteID === selectedNote.id) {
                     return false;
                 } else {
                     return true;
