@@ -1,16 +1,16 @@
 {
-  "name": "note-taker",
-  "version": "1.0.0",
-  "description": "",
-  "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "express": "^4.16.4",
-    "mysql": "^2.18.1",
-    "uuid": "^8.3.1"
-  }
+    "name": "note-taker",
+    "version": "1.0.0",
+    "description": "This app allow users save, delete and reivew notes",
+    "main": "server.js",
+    "scripts": {
+        "start": "node server.js"
+    },
+    "author": "Shihan",
+    "license": "ISC",
+    "dependencies": {
+        "express": "^4.16.4",
+        "mysql": "^2.18.1",
+        "uuid": "^8.3.1"
+    }
 }
