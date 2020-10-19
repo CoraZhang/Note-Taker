@@ -54,4 +54,5 @@ This app should be deployed on Heroku.  [Heroku Guide](../04-Important/HerokuGui
 
 
 ## Screenshots
-
+* ![alt text](StartPage.png)
+* ![alt text](NoteList.png)
